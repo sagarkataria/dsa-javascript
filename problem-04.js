@@ -2,7 +2,7 @@
 
 
 function secondLarger(arr) {
-    let secondLargest = -1
+    let secondLargest = Number.MIN_SAFE_INTEGER
     let largest = arr[0];
     let n = arr.length;
     for (let i = 1; i < n; i++) {
@@ -16,6 +16,6 @@ function secondLarger(arr) {
     return secondLargest;
 }
 
-const arr = [76,67,987,534,900];
+const arr = [1, 2, 4, 7, 7, 5];
 
 console.log(secondLarger(arr));
