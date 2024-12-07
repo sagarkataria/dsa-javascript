@@ -40,7 +40,30 @@ function leftRotateArrayByK(arr, k) {
     return arr;
 
 }
-console.log(leftRotateArrayByK(arr1, k))
-// const n = arr1.length;
-// const result = arr1.slice(-k).concat(arr1.slice(0, -k));
-// console.log(result);
+// console.log(leftRotateArrayByK(arr1, k))
+
+// more optimize 
+
+function reverse(arr, start, end) {
+    while (start <= end) {
+        let temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        start++;
+        end--;
+    }
+}
+
+function rotateArrayByK(arr , k){
+    const n = arr.length;
+     reverse(arr,0,k-1);
+     reverse(arr,k,n-1);
+     reverse(arr,0,n-1);
+}
+
+const arr2 = [1,2,3,4,5,6,7];
+const k1 = 2;
+rotateArrayByK(arr2,k1);
+
+console.log(arr2);
+
