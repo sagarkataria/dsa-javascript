@@ -6,6 +6,7 @@ function searchKey(arr, key) {
     
     while (start <= end) {
         let m = Math.floor((start + end) / 2);
+        // or for m = Math.floor(start+(end-start)/2)
         if (arr[m] === key) {
             return m;
         }
@@ -15,6 +16,6 @@ function searchKey(arr, key) {
             end = m - 1;
         }
     }
+    return -1;  
 }
-
-console.log(searchKey(arr, 4));
+console.log(searchKey(arr, 11));
